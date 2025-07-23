@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: "${env.BRANCH_NAME}", url: 'https://github.com/rana854/java-cicd-app.git'
+                git branch: 'develop', url: 'https://github.com/rana854/java-cicd-app.git'
             }
         }
 
