@@ -2,7 +2,8 @@
 
 ##  About the Project
 
-This project demonstrates a complete CI/CD pipeline setup for a basic Java application using Jenkins and deploying to AWS EC2 instances. The application is a simple Java program that prints "Hello, World!", built using Maven.
+
+This project demonstrates a complete CI/CD pipeline setup for a basic Java application using Jenkins, with automated deployment to AWS EC2 instances across three environments Development, Testing, and Staging.
 
 
 ## Project Structure
@@ -38,11 +39,7 @@ This project demonstrates a complete CI/CD pipeline setup for a basic Java appli
 
 ## How to Use
 
-- Clone the repository:
-
-```bash
-https://github.com/rana854/java-cicd-app.git
-'''
+- git clone https://github.com/rana854/java-cicd-app.git
 
 ## Set Up the Jenkins Pipeline
 
