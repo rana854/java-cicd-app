@@ -13,7 +13,7 @@ public class SpringbootappApplication {
     }
      @GetMapping("/")
     public String home() {
-        return "Hello from Spring Boot on port 8085!";
+        return "Hello";
     }
 
     @GetMapping("/hello")
