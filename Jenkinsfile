@@ -36,6 +36,7 @@ pipeline {
             }
         }
 
+
         stage('Deploy to Test') {
             when {
                 expression {
@@ -52,20 +53,22 @@ pipeline {
             }
         }
 
-        stage('Deploy to STG') {
-            when {
-                branch 'master'
-            }
-            steps {
-                sshagent(credentials: ['ec2-ssh-key']) {
-                    sh """
-                    scp -o StrictHostKeyChecking=no target/*.jar ec2-user@$EC2_IP:/home/ec2-user/java-cicd-app-stg.jar
-                    ssh ec2-user@$EC2_IP 'nohup java -jar /home/ec2-user/java-cicd-app-stg.jar --server.port=8083 > stg.log 2>&1 &'
-                    """
-                }
-            }
+       stage('Deploy to STG') {
+    when {
+        expression {
+            return env.CHANGE_TARGET == 'master'
         }
     }
+    steps {
+        sshagent(credentials: ['ec2-ssh-key']) {
+            sh """
+            scp -o StrictHostKeyChecking=no target/*.jar ec2-user@$EC2_IP:/home/ec2-user/java-cicd-app-stg.jar
+            ssh ec2-user@$EC2_IP 'nohup java -jar /home/ec2-user/java-cicd-app-stg.jar --server.port=8083 > stg.log 2>&1 &'
+            """
+        }
+    }
+}
+
 
     post {
         always {
