@@ -7,18 +7,6 @@ This project demonstrates a complete CI/CD pipeline setup for a basic Java appli
 
 ## Project Structure
 
-java-cicd-app/
-├── src/
-│ └── main/
-│ └── java/
-│ └── com/
-│ └── example/
-│ └── App.java
-├── pom.xml
-├── Jenkinsfile
-└── README.md
-
-
 - src/main/java/: Contains the main Java source code.
 
 - src/test/java/: Contains unit test code.
@@ -50,11 +38,11 @@ java-cicd-app/
 
 ## How to Use
 
-1. **Clone the repository:**
+- Clone the repository:
 
 ```bash
 https://github.com/rana854/java-cicd-app.git
-
+'''
 
 ## Set Up the Jenkins Pipeline
 
@@ -73,10 +61,6 @@ https://github.com/rana854/java-cicd-app.git
 - Set the script path if the Jenkinsfile.
 
 - Save and run the pipeline.
-نسخ
-تحرير
-
-
 
 
 
