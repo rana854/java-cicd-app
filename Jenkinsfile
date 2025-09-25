@@ -53,9 +53,7 @@ pipeline {
 
         stage('Deploy to STG') {
             when {
-                expression {
-                    return env.CHANGE_TARGET == 'master'
-                }
+                branch 'master'
             }
             steps {
                 sshagent(credentials: ['ec2-ssh-key']) {
